@@ -1,0 +1,50 @@
+.header {
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+}
+
+.nav-items {
+    padding: 20px;
+}
+
+.nav-items > ul {
+    display: flex;
+}
+
+.nav-items > ul > li {
+    margin-right: 20px;
+    list-style-type: none;
+    font-size: 24;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.res-card-container {
+    margin-top: 20px;
+    width: 200px;
+    height: 380px;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.cuisine-image {
+    width: 200px;
+    height: 200px;
+    padding: 0px;
+}
+
+.res-details > h4{
+    padding-left: 10px;
+}
