@@ -48,3 +48,7 @@
 .res-details > h4{
     padding-left: 10px;
 }
+
+.filter-container {
+    margin: 20px;
+}
