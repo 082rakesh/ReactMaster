@@ -18,7 +18,7 @@
     display: flex;
 }
 
-.nav-items > ul > li {
+.link {
     margin-right: 20px;
     list-style-type: none;
     font-size: 24;
@@ -51,4 +51,22 @@
 
 .filter-container {
     margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.shimmer-card-container {
+    width: 250px;
+    height: 300px;
+    background-color: lightgrey;
+}
+
+.search-container {
+    display: flex;
+}
+
+.input-text {
+    margin-right: 20px;
 }
