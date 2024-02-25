@@ -1,9 +1,0 @@
-/* #heading {
-    color: red;
-} */
-.heading {
-    border-width: thin;
-    border-color: black;
-    display: flex;
-    background-color: aqua;
-}
