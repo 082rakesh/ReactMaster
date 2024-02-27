@@ -3,7 +3,7 @@ import { IMG_BASE_URL } from '../constants/constant.js';
 
 const CardComponent = (props) => {
 	const resData = props.resData;
-	const { id, name, cuisines, avgRating, sla } = resData.info; // destructuring data
+	const { id, name, cuisines, avgRating, sla } = resData?.info; // destructuring data
 	return (
 		<div className='m-4 p-4 w-[250px] bg-gray-100 shadow-lg rounded-lg hover:bg-gray-400'>
 			<img

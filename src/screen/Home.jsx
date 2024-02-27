@@ -5,11 +5,14 @@ import Shimmer from '../components/Error/Shimmer';
 import SearchBox from '../components/SearchBox';
 import CardComponent from '../components/CardComponent';
 import { Link } from 'react-router-dom';
+import withPromotedLabel from '../components/HOC/withPromotedLabel';
 
 const Home = () => {
 	const [listOfResturants, setListOfResturant] = useState([]);
 	const [searchedRest, setSearchedRest] = useState([]);
 	const [searchedValue, setSearchedValue] = useState('');
+
+	const PromotedRestrauntCard = withPromotedLabel(CardComponent);
 
 	useEffect(() => {
 		fetchRestuarants();
@@ -59,7 +62,11 @@ const Home = () => {
 						key={resturant.info.id}
 						to={'/restuarants/' + resturant.info.id}
 					>
-						<CardComponent resData={resturant} />
+						{resturant.info.name.toLowerCase() === 'pizza hut' ? (
+							<PromotedRestrauntCard resData={resturant} />
+						) : (
+							<CardComponent resData={resturant} />
+						)}
 					</Link>
 				))}
 			</div>
