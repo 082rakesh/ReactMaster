@@ -8,10 +8,11 @@ const useRestraurants = (resID) => {
 	}, []);
 
 	const fetchData = async () => {
-		const response = await fetch(RESTUARANTS_DETAILS + '77949');
+		console.log('resID' + resID);
+		const response = await fetch(RESTUARANTS_DETAILS + resID);
 		const jsonResponse = await response.json();
 		const cardList =
-			jsonResponse.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards
+			jsonResponse.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards
 				.filter(
 					(c) =>
 						c.card?.card?.['@type'] ===

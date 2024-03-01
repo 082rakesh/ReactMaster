@@ -1,6 +1,22 @@
 import { IMG_BASE_URL } from '../constants/constant';
+import Button from './Button';
+import withPlus from './HOC/withPlus';
+import { UseDispatch, useDispatch } from 'react-redux';
+import { addItem } from '../Redux/cartSlice';
 
 const ItemList = (props) => {
+	const AddButton = withPlus(Button);
+	const dispatch = useDispatch();
+
+	const addItemHandler = () => {
+		console.log('add Item');
+		// Dispatch action
+		dispatch(addItem(props.itemList));
+	};
+
+	console.log(
+		'props.itemList.card?.info.name' + props.itemList.card?.info.name
+	);
 	return (
 		<div className='p-2 m-2, border-gray-400 border-b-2 flex justify-between'>
 			<div className=' p-2 w-10/12 '>
@@ -20,6 +36,7 @@ const ItemList = (props) => {
 					className=' w-full'
 					src={IMG_BASE_URL + props.itemList.card?.info.imageId}
 				/>
+				<AddButton onClick={addItemHandler} title='add' />
 			</div>
 		</div>
 	);

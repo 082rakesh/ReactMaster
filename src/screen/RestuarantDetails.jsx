@@ -9,10 +9,12 @@ const RestuarantDetails = () => {
 	const itemCatagories = useRestraurants(resId);
 	const [showIndex, setShowIndex] = useState(0);
 
+	console.log(itemCatagories);
+
 	return itemCatagories === null ? (
 		<Shimmer />
 	) : (
-		itemCatagories.map((card, index) => (
+		itemCatagories?.map((card, index) => (
 			<RestrauntList
 				key={index}
 				catagory={card}

@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+
 const HeaderComponent = () => {
+	// subscribing to the store using the selector
+	const cartItems = useSelector((store) => store.cart.items);
+
 	return (
 		<div className='flex justify-between border border-spacing-5'>
 			<div className='logo-container'>
@@ -15,6 +20,9 @@ const HeaderComponent = () => {
 					</Link>
 					<Link to={'/about'} className='p-2'>
 						About Us
+					</Link>
+					<Link to={'./cart'} className='p-2 font-bold'>
+						Cart ({cartItems.length} items)
 					</Link>
 					<Link to={'./contact'} className='p-2'>
 						Contact Us
