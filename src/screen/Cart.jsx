@@ -9,8 +9,8 @@ const Cart = () => {
 	) : (
 		<div className='flex w-6/12 mx-auto '>
 			<div>
-				{cartItems?.map((item) => (
-					<ItemList key={item.card?.info?.id} itemList={item} />
+				{cartItems?.map((item, index) => (
+					<ItemList key={item.card?.info?.id + index} itemList={item} />
 				))}
 			</div>
 		</div>

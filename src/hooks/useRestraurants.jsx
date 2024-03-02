@@ -8,7 +8,6 @@ const useRestraurants = (resID) => {
 	}, []);
 
 	const fetchData = async () => {
-		console.log('resID' + resID);
 		const response = await fetch(RESTUARANTS_DETAILS + resID);
 		const jsonResponse = await response.json();
 		const cardList =

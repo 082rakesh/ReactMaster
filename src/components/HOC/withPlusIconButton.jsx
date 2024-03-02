@@ -1,5 +1,5 @@
 import Button from '../Button';
-const withPlus = (Button) => {
+const withPlusIconButton = (Button) => {
 	return (props) => {
 		return (
 			<div className='bg-blue-500'>
@@ -10,4 +10,4 @@ const withPlus = (Button) => {
 	};
 };
 
-export default withPlus;
+export default withPlusIconButton;
