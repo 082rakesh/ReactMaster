@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { ALL_RESTURANTS } from '../constants/constant';
 import Button from '../components/Button';
 import Shimmer from '../components/Error/Shimmer';
@@ -6,6 +6,7 @@ import SearchBox from '../components/SearchBox';
 import CardComponent from '../components/CardComponent';
 import { Link } from 'react-router-dom';
 import withPromotedLabel from '../components/HOC/withPromotedLabel';
+import { useRestrauntList } from '../hooks/useRestrauntList';
 
 const Home = () => {
 	const [listOfResturants, setListOfResturant] = useState([]);
@@ -14,26 +15,22 @@ const Home = () => {
 
 	const PromotedRestrauntCard = withPromotedLabel(CardComponent);
 
-	useEffect(() => {
-		fetchRestuarants();
-	}, []);
+	// custom hooks to fetch restraunts to show in the home page. Seperated API fetch call to maintain single responsibility
+	const restrauntsList = useRestrauntList();
+	updateList(restrauntsList);
+
+	function updateList(restraunts) {
+		const updateData = useMemo(() => {
+			setListOfResturant(restrauntsList);
+			setSearchedRest(restrauntsList);
+		}, [restraunts]);
+	}
 
 	const onFilterHandler = () => {
 		const filteredList = listOfResturants.filter(
 			(res) => res.info.avgRating > 4
 		);
 		setListOfResturant(filteredList);
-	};
-
-	const fetchRestuarants = async () => {
-		const response = await fetch(ALL_RESTURANTS);
-		const jsonResponse = await response.json();
-		const restaurants =
-			jsonResponse?.data?.cards[1].card.card.gridElements.infoWithStyle
-				.restaurants;
-
-		setListOfResturant(restaurants);
-		setSearchedRest(restaurants);
 	};
 
 	const onSubmitHandler = () => {
