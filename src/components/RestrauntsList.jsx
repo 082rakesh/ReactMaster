@@ -3,9 +3,32 @@ import ItemList from './ItemList';
 const RestrauntList = (props) => {
 	const { title, itemCards } = props.catagory;
 
-	const onClickHandler = () => {
-		props.setShowIndex();
-	};
+	// https://xyz.com/restraunts
+
+	
+
+	// arrow function: onCLick Handler
+
+	const onClickHandler = useCallback( () => {
+		// chain to parent: sending props from child to parent
+
+	})
+
+	const onClickHandler1 = () => {
+
+	}
+
+	useMemo() //
+
+
+
+
+
+	// componentDidMount
+	// componentWillMount
+	//Render
+	// unmOUnt
+
 	return (
 		<div className=' bg-gray-50 w-6/12 mx-auto my-2 shadow-lg flex-col justify-between'>
 			<div

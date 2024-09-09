@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { IMG_BASE_URL } from '../constants/constant.js';
 
 const CardComponent = (props) => {
@@ -21,4 +21,4 @@ const CardComponent = (props) => {
 	);
 };
 
-export default CardComponent;
+export default memo(CardComponent);
